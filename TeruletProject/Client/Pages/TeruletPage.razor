@@ -1,0 +1,57 @@
+﻿@page "/Terulet"
+@using System.ComponentModel;
+@using TeruletProject.Model;
+
+<h3>Terület számító</h3>
+<EditForm Model="@ViewModel" OnValidSubmit="@Compute">
+     <div class="col-4">
+        <div class="form-group">
+            <label for="a">A szabályos háromszög egyik oldala:</label>
+            <InputText class="form-control" id="a" @bind-Value="@ViewModel.A" />
+        </div>
+        <button type="submit" disabled="@ViewModel.IsBusy">Számolás</button>
+     </div>
+</EditForm>
+<div class="card mt-2 p-2">
+    <h5 class="card-title">Számolás</h5>
+    <div class="card-body">
+        <p>@ViewModel.TeruletAdatok</p>
+    </div>
+</div>
+
+@code {
+
+    private Terulet ViewModel = new Terulet();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.PropertyChanged += async (sender, e) =>
+        {
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        ViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
+
+    public void Compute()
+    {
+        ViewModel.IsBusy = true;
+        ViewModel.Compute();
+        ViewModel.IsBusy = false;
+    }
+}

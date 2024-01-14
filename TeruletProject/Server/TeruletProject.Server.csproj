@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.20" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Client\SquareProject.Client.csproj" />
-    <ProjectReference Include="..\Shared\SquareProject.Shared.csproj" />
+    <ProjectReference Include="..\Client\TeruletProject.Client.csproj" />
+    <ProjectReference Include="..\Shared\TeruletProject.Shared.csproj" />
   </ItemGroup>
 
 

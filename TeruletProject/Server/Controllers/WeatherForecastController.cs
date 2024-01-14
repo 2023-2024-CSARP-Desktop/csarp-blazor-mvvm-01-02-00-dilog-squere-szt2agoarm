@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using SquareProject.Shared;
+using TeruletProject.Shared;
 
-namespace SquareProject.Server.Controllers
+namespace TeruletProject.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

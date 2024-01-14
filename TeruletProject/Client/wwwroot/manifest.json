@@ -1,6 +1,6 @@
 {
-  "name": "SquareProject",
-  "short_name": "SquareProject",
+  "name": "TeruletProject",
+  "short_name": "TeruletProject",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

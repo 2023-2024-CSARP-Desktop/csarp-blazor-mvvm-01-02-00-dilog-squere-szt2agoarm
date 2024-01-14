@@ -1,4 +1,4 @@
-namespace SquareProject.Shared
+namespace TeruletProject.Shared
 {
     public class WeatherForecast
     {
